@@ -1,0 +1,22 @@
+{
+  "name": "eh-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evuzLearn/ehGraphQL.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evuzLearn/ehGraphQL/issues"
+  },
+  "homepage": "https://github.com/evuzLearn/ehGraphQL#readme",
+  "dependencies": {
+    "graphql": "^0.9.1"
+  }
+}
