@@ -11,7 +11,8 @@ const schema = buildSchema(`
     }
     
     type Query {
-        video: Video 
+        video: Video,
+        videos: [Video]
     }
 
     type Schema {
@@ -19,18 +20,36 @@ const schema = buildSchema(`
     }
 `);
 
+const videoA = {
+    id: 3,
+    title: 'Create a GraphQL Schema',
+    duration: 30,
+    watched: true
+}
+
+
+const videoB = {
+    id: 4,
+    title: 'Ember.js CLI',
+    duration: 50,
+    watched: false 
+}
+
+const videos = [videoA, videoB];
+
 const resolvers = {
     video: () => ({
         id: '2',
         title: 'VideoFoo',
         duration: 90,
         watched: false
-    })
+    }),
+    videos: () => videos
 }
 
 const query = `
     query myFirstQuery {
-        video {
+        videos {
             id,
             title,
             duration,
@@ -41,7 +60,7 @@ const query = `
 
 graphql(schema, query, resolvers)
 .then(result => {
-    console.log(result);
+    console.log(JSON.stringify(result));
 })
 .catch(err => {
     console.error(err);
